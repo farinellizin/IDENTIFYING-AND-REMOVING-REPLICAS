@@ -1,5 +1,21 @@
 #include "Lista.hpp"
 
+void archive_reading(List *l) {
+	string line;
+	Item aux;
+
+	ifstream file;
+	file.open("10names.txt");
+	if(file.is_open()) {
+		while(!file.eof()) {
+			getline(file, line);
+			aux.val = line;
+			list_insert(l, aux);
+		}
+		file.close();
+	}
+}
+
 int main(){
 
 	List l;
@@ -7,17 +23,7 @@ int main(){
 	string line;
 
 	create_empty_list(&l);
-	ifstream file("100names.txt");
-	
-	if (file.is_open()) {
-		while (!file.eof()) {
-			getline(file, line);
-			aux.val = line;
-			list_insert(&l, aux);
-		}
-		file.close();
-	}
-
+	archive_reading(&l);
 	name_most_popsup(&l);
 	cout << "\n\n\t- List before changes: " << endl << endl;
 	list_print(&l);
