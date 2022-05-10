@@ -100,3 +100,9 @@ void list_insert(List *l, Item d) {
 | Melhor caso | Na hipotese de haver espaco em branco logo na segunda posicao da lista. | 2 |
 | Caso medio | Caso somente haja espaco em branco somente no meio da lista. | n/2 |
 | Pior caso | Caso haja espaco em branco somente na ultima posicao ou nao haja nenhum espaco. | n |
+
+## SOCIAL MEDIA
+- Twitter: @farinellizin
+- Instagram: @farinellizin
+- Telegram: @farinellizin
+- E-mail: lucasfcpinho@gmail.com
