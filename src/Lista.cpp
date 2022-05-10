@@ -1,22 +1,22 @@
 #include "Lista.hpp"
 
 void create_empty_list(List *l){
-	l->first = 0;
-	l->last  = 0;
+	l -> first = 0;
+	l -> last  = 0;
 }
 
 void list_insert(List *l, Item d) {
-	if (l->last >= MAXTAM) {
+	if (l -> last >= MAXTAM) {
 		printf("LISTA CHEIA!\n");
 	} else {
-		l->vet[l->last] = d;
-		l->last++;
+		l -> vet[l->last] = d;
+		l -> last++;
 	}
 }
 
 void list_print(List *l){
-	for(int i=l->first; i<l->last; i++) {
-		cout << l->vet[i].val << "\t" << endl; }
+	for(int i = l-> first; i < l->last; i++) {
+		cout << "\t\t\t" << l -> vet[i].val << endl; }
 }
 
 void name_most_popsup(List *l) {
@@ -41,7 +41,7 @@ void name_most_popsup(List *l) {
 		dynamic_cont = 0;
 	}
 
-	cout << "\n\n\t- The most seen name (" << biggest_cont << " times) is: " << name_most_popup << endl; 
+	cout << "\n\t- The most seen name (" << biggest_cont << " times) is: " << name_most_popup << endl; 
 }
 
 void replacing_repeated_names(List *l) {
@@ -49,13 +49,10 @@ void replacing_repeated_names(List *l) {
 	
 	for (int i = l -> first; i < l -> last - 1; i++) {
 		aux.val = l -> vet[i].val;
-		//cout << "Name I = " << aux.val/*l -> vet[i].val*/ << endl << endl;
 		for (int j = i + 1; j < (l -> last - 1); j++) {
 			if (aux.val == l->vet[j].val) {
-				//cout << "Repeated name: " << l -> vet[j].val;
 				l -> vet[j].val = "\0";
 			}
-			//cout << "Name J = " << l -> vet[j].val << endl << endl;
 		}
 	}
 }
