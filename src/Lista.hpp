@@ -1,6 +1,6 @@
 #ifndef LISTA_HPP
 #define LISTA_HPP
-#define MAXTAM 100
+#define MAXTAM 10
 #include <iostream>
 #include <string>
 #include <fstream>

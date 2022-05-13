@@ -7,9 +7,9 @@ void create_empty_list(List *l){
 
 void list_insert(List *l, Item d) {
 	if (l -> last >= MAXTAM) {
-		printf("LISTA CHEIA!\n");
+		cout << "List is full!" << endl;
 	} else {
-		l -> vet[l->last] = d;
+		l -> vet[l -> last] = d;
 		l -> last++;
 	}
 }
@@ -44,13 +44,10 @@ void name_most_popsup(List *l) {
 	cout << "\n\t- The most seen name (" << biggest_cont << " times) is: " << name_most_popup << endl; 
 }
 
-void replacing_repeated_names(List *l) {
-	Item aux;
-	
+void replacing_repeated_names(List *l) {	
 	for (int i = l -> first; i < l -> last - 1; i++) {
-		aux.val = l -> vet[i].val;
-		for (int j = i + 1; j < (l -> last - 1); j++) {
-			if (aux.val == l->vet[j].val) {
+		for (int j = i + 1; j < l -> last; j++) {
+			if (l -> vet[i].val == l -> vet[j].val) {
 				l -> vet[j].val = "\0";
 			}
 		}
